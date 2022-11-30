@@ -20,6 +20,7 @@ import org.junit.jupiter.api.DisplayNameGenerator.ReplaceUnderscores;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
 
 @DisplayName("BaseballGameResult enum")
@@ -53,6 +54,12 @@ class BaseballGameResultTest {
                 Arguments.of(2, 1, _2_BALL_1_STRIKE),
                 Arguments.of(1, 1, _1_BALL_1_STRIKE)
         );
+    }
+
+    @ParameterizedTest
+    @CsvSource({"_3_STRIKE, true", "_3_BALL, false"})
+    void isStrikeOut_메서드는_3스트라이크인_경우_true_아닌_경우_false를_반환한다(BaseballGameResult gameResult, boolean result) {
+        assertThat(gameResult.isStrikeOut()).isEqualTo(result);
     }
 
     @Test

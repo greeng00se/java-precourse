@@ -31,6 +31,10 @@ public enum BaseballGameResult {
                 .orElseThrow(() -> new IllegalArgumentException(INVALID_RESULT_MESSAGE));
     }
 
+    public boolean isStrikeOut() {
+        return this == _3_STRIKE;
+    }
+
     public int getBall() {
         return ball;
     }
