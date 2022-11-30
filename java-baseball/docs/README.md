@@ -35,6 +35,7 @@
 ### domain
 
 - [x]  BaseballNumber: 야구공 번호를 표현하는 클래스
+- [x]  BaseballNumbers: 야구공 3개를 표현하는 일급 컬렉션
 - [x]  BaseballGameResult: 숫자 야구 게임 결과를 표현하는 enum
 
 ### view
