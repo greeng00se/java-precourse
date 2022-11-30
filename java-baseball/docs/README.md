@@ -38,6 +38,7 @@
 - [x]  BaseballNumbers: 야구공 3개를 표현하는 일급 컬렉션
 - [x]  BaseballGameResult: 숫자 야구 게임 결과를 표현하는 enum
 - [x]  BaseballNumbersFactory: 야구공을 생성하는 책임을 가진 클래스
+- [x]  BaseballGameStatus: 게임을 상태를 표현하는 enum
 
 ### view
 
