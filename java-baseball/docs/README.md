@@ -51,5 +51,6 @@
 
 - [x]  GameResultDto: 게임 결과에 대한 값을 전달하는 클래스
 - [x]  BaseballNumbersDto: 사용자가 입력한 BaseballNumbers를 전달하는 클래스
+- [x]  GameStatusDto: 사용자가 입력한 GameStatus를 전달하는 클래스
 
 ### etc
