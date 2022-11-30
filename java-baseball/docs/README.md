@@ -37,5 +37,6 @@
 ### view
 
 - [x]  InputValidator: 입력값을 검증하는 클래스
+- [x]  InputView: 입력을 담당하는 클래스  
 
 ### etc
