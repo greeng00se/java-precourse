@@ -20,4 +20,16 @@ public enum BaseballGameStatus {
                 .findFirst()
                 .orElseThrow(() -> new IllegalArgumentException(INVALID_GAME_STATUS_MESSAGE));
     }
+
+    public static BaseballGameStatus playGame() {
+        return PLAY;
+    }
+
+    public static BaseballGameStatus stopGame() {
+        return STOP;
+    }
+
+    public boolean isPlayable() {
+        return this == PLAY;
+    }
 }
