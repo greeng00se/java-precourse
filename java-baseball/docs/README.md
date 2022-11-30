@@ -54,3 +54,5 @@
 - [x]  GameStatusDto: 사용자가 입력한 GameStatus를 전달하는 클래스
 
 ### etc
+
+- [x]  BaseballGameService: 야구게임의 로직을 처리하는 클래스
