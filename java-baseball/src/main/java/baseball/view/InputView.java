@@ -1,5 +1,7 @@
 package baseball.view;
 
+import baseball.dto.BaseballNumbersDto;
+import baseball.dto.GameStatusDto;
 import camp.nextstep.edu.missionutils.Console;
 
 public class InputView {
@@ -9,17 +11,17 @@ public class InputView {
 
     private final InputValidator inputValidator = new InputValidator();
 
-    public String readBaseballNumbers() {
+    public BaseballNumbersDto readBaseballNumbers() {
         System.out.println(READ_BASEBALL_NUMBERS_MESSAGE);
         String numbers = Console.readLine();
         inputValidator.validateBaseballNumbers(numbers);
-        return numbers;
+        return new BaseballNumbersDto(numbers);
     }
 
-    public String readStatusCommand() {
+    public GameStatusDto readStatusCommand() {
         System.out.println(READ_STATUS_COMMAND_MESSAGE);
         String command = Console.readLine();
         inputValidator.validateStatusCommand(command);
-        return command;
+        return new GameStatusDto(command);
     }
 }
