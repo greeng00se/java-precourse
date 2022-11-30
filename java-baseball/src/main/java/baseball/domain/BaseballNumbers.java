@@ -6,7 +6,7 @@ import java.util.stream.IntStream;
 
 public class BaseballNumbers {
 
-    private static final int VALID_BASEBALL_NUMBERS_SIZE = 3;
+    public static final int VALID_BASEBALL_NUMBERS_SIZE = 3;
     private static final String INVALID_BASEBALL_NUMBERS_SIZE_MESSAGE = "올바른 BaseballNumbers 입력값이 아닙니다.";
 
     private List<BaseballNumber> baseballNumbers;
