@@ -37,3 +37,4 @@
 ### dto
 
 - [x]  CarNamesDto: 차의 이름을 전달하는 클래스
+- [x]  PlayCountDto: 게임 실행 횟수를 전달하는 클래스
