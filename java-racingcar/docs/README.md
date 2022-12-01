@@ -6,21 +6,30 @@
 - [ ]  0~9 사이의 무작위 값을 구한 후 무작위 값이 4 이상인 경우 이동한다.
 - [ ]  이동을 마친 후 가장 먼 거리를 움직인 자동차가 승리한다.
     - [ ]  우승자는 한 명 이상일 수 있다.
-- [ ]  사용자가 잘못된 값을 입력하는 경우 `IllegalArgumentException`를 발생시킨다. 
+- [x]  사용자가 잘못된 값을 입력하는 경우 `IllegalArgumentException`를 발생시킨다.
     - [ ]  "[ERROR]"로 시작하는 에러 메시지를 출력 후 그 부분부터 입력을 다시 받는다.
 
 ### 입력
 
 - [ ]  `경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)`를 출력하고 자동차 이름을 입력받는다.
-- [ ]  `시도할 횟수를 입력받는다.`
+    - [x]  차 이름에 빈칸이 있는 경우 IllegalArgumentException을 던진다.
+    - [x]  차 이름이 없는 경우 IllegalArgumentException을 던진다.
+    - [x]  차 이름의 길이가 5를 초과하는 경우 IllegalArgumentException을 던진다.
+- [ ]  `시도할 회수는 몇회인가요?`를 출력하고 시도할 횟수를 입력받는다.
+    - [x]  숫자가 아닌경우 IllegalArgumentException을 던진다.
+    - [x]  1미만의 숫자를 입력받는 경우 IllegalArgumentException을 던진다.
 
 ### 출력
 
 - [ ]  실행 결과는 아래에 맞춰 출력한다.
-`
-실행 결과
-pobi : -
-woni :
-jun : -
-`
+  `
+  실행 결과
+  pobi : -
+  woni :
+  jun : -
+  `
 - [ ]  최종 우승자가 여러명일 경우 `, `로 구분하여 출력한다.
+
+### View
+
+- [x]  InputValidator: 입력을 검증하는 클래스
