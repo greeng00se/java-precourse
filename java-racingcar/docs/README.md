@@ -33,3 +33,7 @@
 ### View
 
 - [x]  InputValidator: 입력을 검증하는 클래스
+
+### dto
+
+- [x]  CarNamesDto: 차의 이름을 전달하는 클래스
