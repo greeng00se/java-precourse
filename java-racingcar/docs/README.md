@@ -53,3 +53,7 @@
 - [x]  CarDto: 차에 대한 정보를 가지고 있는 클래스
 - [x]  PlayResultDto: 게임 진행에 대한 정보를 전달하는 클래스
 - [x]  GameResultDto: 우승자의 정보를 전달하는 클래스
+
+### etc
+
+- [x]  RacingGameService: 로직을 처리하는 서비스 
