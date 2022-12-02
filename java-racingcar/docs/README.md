@@ -7,7 +7,7 @@
 - [x]  이동을 마친 후 가장 먼 거리를 움직인 자동차가 승리한다.
     - [x]  우승자는 한 명 이상일 수 있다.
 - [x]  사용자가 잘못된 값을 입력하는 경우 `IllegalArgumentException`를 발생시킨다.
-    - [ ]  "[ERROR]"로 시작하는 에러 메시지를 출력 후 그 부분부터 입력을 다시 받는다.
+    - [x]  "[ERROR]"로 시작하는 에러 메시지를 출력 후 그 부분부터 입력을 다시 받는다.
 
 ### 입력
 
@@ -56,4 +56,5 @@
 
 ### etc
 
-- [x]  RacingGameService: 로직을 처리하는 서비스 
+- [x]  RacingGameService: 로직을 처리하는 서비스
+- [x]  RacingGameController: 요청을 처리하는 컨트롤러 클래스 
