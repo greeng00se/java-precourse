@@ -16,11 +16,11 @@ class InputValidatorTest {
     private final InputValidator sut = new InputValidator();
 
     @ParameterizedTest
-    @ValueSource(strings = {"names,hello, ", "", " , ", "hello,jackson"})
+    @ValueSource(strings = {"names,hello, ", "", " , ", "hello,jackson", "hello,hello"})
     void validateCarNames_메서드는_요구사항에_맞지_않는_차_이름을_입력받으면_IllegalArgumentException을_던진다(String names) {
         assertThatThrownBy(() -> sut.validateCarNames(names))
                 .isInstanceOf(IllegalArgumentException.class)
-                .hasMessage("차 이름은 5자 이하, 쉼표로 구분되어야 합니다.");
+                .hasMessage("차 이름은 중복이 없는 5이하의 이름이어야 하고 쉼표로 구분되어야 합니다.");
     }
 
     @ParameterizedTest
