@@ -49,6 +49,27 @@ class CarTest {
     }
 
     @Test
+    void isSamePosition_메서드는_같은_위치에_있는_차를_입력받으면_true를_반환한다() {
+        Car car1 = new Car("car1");
+        Car car2 = new Car("car2");
+
+        boolean result = car1.isSamePosition(car2);
+
+        assertThat(result).isTrue();
+    }
+
+    @Test
+    void isSamePosition_메서드는_다른_위치에_있는_차를_입력받으면_false를_반환한다() {
+        Car car1 = new Car("car1");
+        Car car2 = new Car("car2");
+        car1.move(5);
+
+        boolean result = car1.isSamePosition(car2);
+
+        assertThat(result).isFalse();
+    }
+
+    @Test
     void compareTo_메서드는_다른_차를_입력받아_위치를_비교한다() {
         Car car1 = new Car("car1");
         Car car2 = new Car("car2");
