@@ -8,6 +8,7 @@ import java.util.List;
 public class InputValidator {
 
     private static final String CAR_NAMES_DELIMITER = ",";
+    private static final int CAR_NAMES_SPLIT_LIMIT = -1;
     private static final String WHITE_SPACE = " ";
     private static final int CAR_NAME_UPPER_BOUND = 5;
     private static final String INVALID_CAR_NAME_MESSAGE = "차 이름은 중복이 없는 5이하의 이름이어야 하고 쉼표로 구분되어야 합니다.";
@@ -22,7 +23,7 @@ public class InputValidator {
     }
 
     private List<String> toCarNames(String names) {
-        return Arrays.stream(names.split(CAR_NAMES_DELIMITER))
+        return Arrays.stream(names.split(CAR_NAMES_DELIMITER, CAR_NAMES_SPLIT_LIMIT))
                 .collect(toList());
     }
 

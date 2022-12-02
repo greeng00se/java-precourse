@@ -16,7 +16,7 @@ class InputValidatorTest {
     private final InputValidator sut = new InputValidator();
 
     @ParameterizedTest
-    @ValueSource(strings = {"names,hello, ", "", " , ", "hello,jackson", "hello,hello"})
+    @ValueSource(strings = {"names,hello,", "names,", "", " , ", "hello,jackson", "hello,hello"})
     void validateCarNames_메서드는_요구사항에_맞지_않는_차_이름을_입력받으면_IllegalArgumentException을_던진다(String names) {
         assertThatThrownBy(() -> sut.validateCarNames(names))
                 .isInstanceOf(IllegalArgumentException.class)
