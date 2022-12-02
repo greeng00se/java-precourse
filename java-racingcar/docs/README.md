@@ -35,6 +35,8 @@
 
 - [x]  PlayCount: 게임 진행 횟수에 대한 정보를 가지고 있는 클래스
 - [x]  Car: 자동차를 표현하는 클래스
+- [x]  NumberGenerator: 숫자 생성 인터페이스
+- [x]  RandomNumberGenerator: 1 ~ 9 사이의 숫자를 랜덤으로 생성하는 구현체
 
 ### View
 
