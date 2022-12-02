@@ -12,10 +12,10 @@ import org.junit.jupiter.api.Test;
 class PlayCountTest {
 
     @Test
-    void play_메서드는_playCount를_하나_감소시킨다() {
+    void decrease_메서드는_playCount를_하나_감소시킨다() {
         PlayCount sut = new PlayCount(1);
 
-        sut.play();
+        sut.decrease();
 
         assertThat(sut.isPlayable()).isFalse();
     }

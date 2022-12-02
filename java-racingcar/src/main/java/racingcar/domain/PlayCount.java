@@ -10,7 +10,7 @@ public class PlayCount {
         this.count = count;
     }
 
-    public void play() {
+    public void decrease() {
         if (!isPlayable()) {
             return;
         }
