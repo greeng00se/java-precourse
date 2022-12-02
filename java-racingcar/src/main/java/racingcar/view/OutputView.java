@@ -18,9 +18,12 @@ public class OutputView {
     private static final String GAME_RESULT_DELIMITER = ", ";
     private static final String EXCEPTION_MESSAGE = "[ERROR] ";
 
-    public void printPlayResult(PlayResultDto playResult) {
+    public void printPlayResultMessage() {
         System.out.println(PLAY_RESULT_MESSAGE);
-        System.out.println(generatePlayResults(playResult));
+    }
+
+    public void printPlayResult(PlayResultDto playResult) {
+        System.out.println(generatePlayResults(playResult) + PLAY_RESULT_DELIMITER);
     }
 
     private String generatePlayResults(PlayResultDto gameResult) {
@@ -47,7 +50,7 @@ public class OutputView {
                 .collect(joining(GAME_RESULT_DELIMITER));
     }
 
-    void printException(String message) {
+    public void printException(String message) {
         System.out.println(EXCEPTION_MESSAGE + message);
     }
 }
