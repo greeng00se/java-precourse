@@ -2,6 +2,7 @@ package racingcar.domain;
 
 import static java.util.stream.Collectors.toList;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 
@@ -36,7 +37,7 @@ public class Cars {
     }
 
     public List<Car> getCars() {
-        return cars;
+        return Collections.unmodifiableList(cars);
     }
 
     public List<String> getWinners() {
