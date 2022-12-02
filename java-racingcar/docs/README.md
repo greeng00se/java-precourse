@@ -37,6 +37,7 @@
 - [x]  Car: 자동차를 표현하는 클래스
 - [x]  NumberGenerator: 숫자 생성 인터페이스
 - [x]  RandomNumberGenerator: 1 ~ 9 사이의 숫자를 랜덤으로 생성하는 구현체
+- [x]  Cars: 자동차 일급 컬렉션
 
 ### View
 
