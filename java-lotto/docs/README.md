@@ -58,3 +58,7 @@
 ### etc
 
 - [x]  LottoController: 요청을 처리
+
+### dto
+
+- [x]  AmountDto: 로또 구매 금액을 전달하는 Dto 클래스 추가
