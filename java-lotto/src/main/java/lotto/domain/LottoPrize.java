@@ -48,7 +48,7 @@ public enum LottoPrize {
         return lottoPrize;
     }
 
-    public long calculatePrize(int count) {
+    public long calculatePrize(long count) {
         return this.prize * count;
     }
 

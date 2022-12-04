@@ -26,7 +26,7 @@ class LottoPrizeTest {
     void calculatePrize_메서드는_당첨횟수를_입력받아_총_당첨금을_반환한다() {
         LottoPrize prize = _3RD_PRIZE;
 
-        long result = prize.calculatePrize(5);
+        long result = prize.calculatePrize(5L);
 
         assertThat(result).isEqualTo(7_500_000L);
     }
