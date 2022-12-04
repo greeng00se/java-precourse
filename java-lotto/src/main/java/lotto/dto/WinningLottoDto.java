@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 public class WinningLottoDto {
 
     private static final String DELIMITER = ",";
+    private static final int LIMIT = -1;
 
     private final String winningNumber;
     private final String bonusNumber;
@@ -17,7 +18,7 @@ public class WinningLottoDto {
     }
 
     public List<Integer> getWinningNumber() {
-        return Arrays.stream(winningNumber.split(DELIMITER, -1))
+        return Arrays.stream(winningNumber.split(DELIMITER, LIMIT))
                 .map(Integer::valueOf)
                 .collect(Collectors.toList());
     }

@@ -34,7 +34,7 @@ public enum LottoPrize {
                 .orElse(_NOTHING);
     }
 
-    private static List<LottoPrize> lowestPrizeOrder() {
+    public static List<LottoPrize> lowestPrizeOrder() {
         return Arrays.stream(values())
                 .filter(prize -> prize != _NOTHING)
                 .sorted(Comparator.comparingLong(o -> o.prize))
