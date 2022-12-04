@@ -78,3 +78,4 @@
 - [x]  AmountDto: 로또 구매 금액을 전달하는 클래스
 - [x]  LottoTicketDto: 구매한 로또를 전달하는 클래스
 - [x]  WinningLottoDto: 당첨 번호와 보너스 번호를 전달하는 클래스
+- [x]  LottoResultDto: 로또 결과를 전달하는 클래스
