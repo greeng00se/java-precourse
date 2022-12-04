@@ -53,7 +53,8 @@
 
 ### domain
 
-- [x]  LottoNumber: 로또 번호 한 개를 표현하는 클래스
+- [x]  LottoNumber: 로또 번호 한 자리를 표현하는 클래스
+- [x]  Lotto: 로또 번호 여섯 자리를 표현하는 일급 컬렉션
 
 ### View
 
