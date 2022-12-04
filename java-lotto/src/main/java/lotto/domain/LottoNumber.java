@@ -32,6 +32,11 @@ public class LottoNumber {
         }
     }
 
+    @Override
+    public String toString() {
+        return number.toString();
+    }
+
     public Integer getNumber() {
         return number;
     }

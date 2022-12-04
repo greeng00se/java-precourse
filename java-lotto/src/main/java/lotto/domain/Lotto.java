@@ -29,4 +29,31 @@ public class Lotto {
                 .map(LottoNumber::valueOf)
                 .collect(toList());
     }
+
+    public LottoPrize check(Lotto lotto, LottoNumber bonusNumber) {
+        int match = checkLotto(lotto);
+        boolean bonusMatched = checkBonusNumber(bonusNumber);
+        return LottoPrize.from(match, bonusMatched);
+    }
+
+    private int checkLotto(Lotto lotto) {
+        return (int) lotto.numbers.stream()
+                .filter(this.numbers::contains)
+                .count();
+    }
+
+    private boolean checkBonusNumber(LottoNumber bonusNumber) {
+        return this.numbers.contains(bonusNumber);
+    }
+
+    @Override
+    public String toString() {
+        return numbers.toString();
+    }
+
+    public List<Integer> getNumbers() {
+        return numbers.stream()
+                .map(LottoNumber::getNumber)
+                .collect(toList());
+    }
 }
