@@ -59,6 +59,7 @@
 - [x]  LottoResult: 로또 티켓으로 구매한 로또 결과를 표현하는 일급 컬렉션
 - [x]  LottoTicket: 구매한 로또 전체를 표현하는 일급 컬렉션
 - [x]  LottoStore: 로또를 판매하는 클래스
+- [x]  LottoMachine: 당첨 로또에 대한 정보를 가지고 있는 클래스
 
 ### View
 
