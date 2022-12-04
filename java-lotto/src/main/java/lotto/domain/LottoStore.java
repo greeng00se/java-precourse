@@ -31,6 +31,7 @@ public class LottoStore {
 
     private Lotto quickPick() {
         return pickUniqueNumbersInRange(LOTTO_NUMBER_LOWER_BOUND, LOTTO_NUMBER_UPPER_BOUND, VALID_LOTTO_SIZE).stream()
+                .sorted()
                 .collect(collectingAndThen(toList(), Lotto::new));
     }
 }
