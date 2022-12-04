@@ -56,6 +56,7 @@
 - [x]  LottoNumber: 로또 번호 한 자리를 표현하는 클래스
 - [x]  Lotto: 로또 번호 여섯 자리를 표현하는 일급 컬렉션
 - [x]  LottoPrize: 로또 당첨 결과를 표현하는 Enum
+- [x]  LottoResult: 로또 티켓으로 구매한 로또 결과를 표현하는 일급 컬렉션
 
 ### View
 
