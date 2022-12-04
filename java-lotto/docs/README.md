@@ -58,6 +58,7 @@
 - [x]  LottoPrize: 로또 당첨 결과를 표현하는 Enum
 - [x]  LottoResult: 로또 티켓으로 구매한 로또 결과를 표현하는 일급 컬렉션
 - [x]  LottoTicket: 구매한 로또 전체를 표현하는 일급 컬렉션
+- [x]  LottoStore: 로또를 판매하는 클래스
 
 ### View
 

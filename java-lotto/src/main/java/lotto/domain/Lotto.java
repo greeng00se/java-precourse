@@ -8,7 +8,7 @@ import java.util.List;
 public class Lotto {
 
     public static final long LOTTO_AMOUNT = 1000L;
-    private static final int VALID_LOTTO_SIZE = 6;
+    public static final int VALID_LOTTO_SIZE = 6;
     private static final String INVALID_LOTTO_SIZE_MESSAGE = "로또 번호는 중복되지 않은 6개의 숫자여야 합니다.";
 
     private final List<LottoNumber> numbers;
