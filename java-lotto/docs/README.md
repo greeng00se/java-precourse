@@ -71,6 +71,7 @@
 ### etc
 
 - [x]  LottoController: 요청을 처리하는 클래스
+- [x]  LottoService: 비즈니스 로직을 처리하는 서비스 클래스
 
 ### dto
 
