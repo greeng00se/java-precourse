@@ -66,6 +66,7 @@
 
 - [x]  InputValidator: 입력값 검증하는 클래스
 - [x]  InputView: 입력 담당하는 클래스
+- [x]  OutputView: 출력을 담당하는 클래스
 
 ### etc
 
@@ -74,3 +75,4 @@
 ### dto
 
 - [x]  AmountDto: 로또 구매 금액을 전달하는 Dto 클래스
+- [x]  LottoTicketDto: 구매한 로또를 전달하는 Dto 클래스
