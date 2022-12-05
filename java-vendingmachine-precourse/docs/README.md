@@ -41,4 +41,5 @@
 
 ### dto
 
-- [x] AmountDto: 금액을 전달하는 클래스 
+- [x] AmountDto: 금액을 전달하는 클래스
+- [x] ProductsDto: 물건을 전달하는 클래스 
