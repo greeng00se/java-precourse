@@ -45,4 +45,16 @@ class InputValidatorTest {
         assertThatThrownBy(() -> sut.validateProducts(products))
                 .isInstanceOf(IllegalArgumentException.class);
     }
+
+    @ParameterizedTest
+    @ValueSource(strings = {
+            "[product,1000,10]",
+            "[상품,1000,10];[상품,2000,5]",
+            "[상품,10,5];[상품,2000,0]",
+            "[p1,9900,10];[p3,2000,100]",
+            "[피자,9900,10];[치킨,9500,1]",
+    })
+    void validateProducts_메서드는_올바른_상품형식인_경우_예외를_던지지_않는다(String products) {
+        assertThatNoException().isThrownBy(() -> sut.validateProducts(products));
+    }
 }
