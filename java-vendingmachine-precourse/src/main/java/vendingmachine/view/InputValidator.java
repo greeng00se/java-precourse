@@ -12,9 +12,11 @@ public class InputValidator {
     private static final String INVALID_NUMBER_FORMAT_MESSAGE = "올바른 숫자 형식이 아닙니다.";
     private static final String INVALID_AMOUNT_FORMAT_MESSAGE = "금액은 10원 단위어야 합니다.";
     private static final Pattern VALID_PRODUCT_PATTERN = Pattern.compile("\\[[a-zA-Z가-힣0-9]+,[0-9]+,[0-9]+\\]");
-    private static final String PRODUCTS_DELIMITER = ";";
-    private static final String PRODUCT_DELIMITER = ",";
-    private static final int PRODUCT_AMOUNT_INDEX = 1;
+    public static final String PRODUCTS_DELIMITER = ";";
+    public static final String PRODUCT_DELIMITER = ",";
+    public static final int PRODUCT_NAME_INDEX = 0;
+    public static final int PRODUCT_AMOUNT_INDEX = 1;
+    public static final int PRODUCT_QUANTITY_INDEX = 2;
     private static final int SPLIT_INDEX = -1;
     private static final String INVALID_PRODUCT_FORMAT_MESSAGE = "상품 형식: [상품명,가격,수량] 여러 개인 경우 ;로 구분해야 합니다.";
 
