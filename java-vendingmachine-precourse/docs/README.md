@@ -43,6 +43,7 @@
 
 - [x] InputValidator: 입력을 검증하는 클래스
 - [x] InputView: 입력을 담당하는 클래스
+- [x] OutputView: 출력을 담당하는 클래스
 
 ### dto
 
