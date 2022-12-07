@@ -1,33 +1,16 @@
 package vendingmachine.domain;
 
 import java.util.EnumMap;
+import java.util.Map;
 
 public class Change {
 
-    private static final int PLUS_COUNT = 1;
     private static final int ZERO_AMOUNT = 0;
-    private static final int VALID_AMOUNT_REMAIN = 10;
-    private static final String INVALID_AMOUNT_FORMAT_MESSAGE = "거스름돈은 10원 단위로 입력해야합니다.";
 
     private final EnumMap<Coin, Integer> change = new EnumMap<>(Coin.class);
 
-    public Change(Integer amount) {
-        validate(amount);
-        toChange(amount);
-    }
-
-    private void validate(Integer amount) {
-        if (amount % VALID_AMOUNT_REMAIN != 0) {
-            throw new IllegalArgumentException(INVALID_AMOUNT_FORMAT_MESSAGE);
-        }
-    }
-
-    private void toChange(Integer amount) {
-        while (amount > ZERO_AMOUNT) {
-            int coin = Coin.pickRandomCoinLessThanOrEqualTo(amount);
-            amount -= coin;
-            change.merge(Coin.from(coin), PLUS_COUNT, Integer::sum);
-        }
+    public Change(Map<Coin, Integer> change) {
+        this.change.putAll(change);
     }
 
     public Integer calculateSum() {
@@ -36,7 +19,25 @@ public class Change {
                 .reduce(ZERO_AMOUNT, Integer::sum);
     }
 
-    public EnumMap<Coin, Integer> getChange() {
+    public Map<Coin, Integer> getChangeLessThanOrEqualTo(Integer value) {
+        EnumMap<Coin, Integer> result = new EnumMap<>(Coin.class);
+        for (Coin coin : Coin.descendingOrder()) {
+            Integer maximumChangeCount = calculateMaximumChangeCount(value, coin);
+            result.put(coin, maximumChangeCount);
+            value -= coin.amountMultiplyBy(maximumChangeCount);
+        }
+        return result;
+    }
+
+    private Integer calculateMaximumChangeCount(Integer value, Coin coin) {
+        int count = value / coin.getAmount();
+        Integer coinCount = change.getOrDefault(coin, ZERO_AMOUNT);
+        int maximumChangeCount = Integer.min(count, coinCount);
+        change.put(coin, coinCount - maximumChangeCount);
+        return maximumChangeCount;
+    }
+
+    public Map<Coin, Integer> getChange() {
         return new EnumMap<>(change);
     }
 }
