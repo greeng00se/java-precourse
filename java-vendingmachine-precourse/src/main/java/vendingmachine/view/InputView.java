@@ -2,6 +2,7 @@ package vendingmachine.view;
 
 import camp.nextstep.edu.missionutils.Console;
 import vendingmachine.dto.AmountDto;
+import vendingmachine.dto.ProductsDto;
 
 public class InputView {
 
@@ -27,9 +28,10 @@ public class InputView {
         return new AmountDto(amount);
     }
 
-    public void readProducts() {
+    public ProductsDto readProducts() {
         System.out.println(READ_PRODUCTS_MESSAGE);
-        String product = Console.readLine();
-        inputValidator.validateProducts(product);
+        String products = Console.readLine();
+        inputValidator.validateProducts(products);
+        return new ProductsDto(products);
     }
 }

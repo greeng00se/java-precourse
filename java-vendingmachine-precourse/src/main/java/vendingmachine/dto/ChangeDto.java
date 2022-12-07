@@ -1,4 +1,4 @@
-package vendingmachine.view;
+package vendingmachine.dto;
 
 import java.util.EnumMap;
 import vendingmachine.domain.Coin;
