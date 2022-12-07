@@ -55,3 +55,4 @@
 - [x] Coin: 동전을 표현하는 Enum
 - [x] Change: 거스름돈 일급 컬렉션
 - [x] ChangeFactory: 거스름돈을 자동으로 생성하는 클래스
+- [x] Product: 상품 클래스
