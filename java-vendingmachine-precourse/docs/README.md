@@ -47,7 +47,8 @@
 ### dto
 
 - [x] AmountDto: 금액을 전달하는 클래스
-- [x] ProductsDto: 물건을 전달하는 클래스
+- [x] ChangeDto: 거스름돈을 전달하는 클래스
+- [x] ProductDto: 물건과 수량을 전달하는 클래스
 
 ### domain
 
