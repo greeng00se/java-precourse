@@ -47,6 +47,10 @@ public enum Coin {
                 .orElseThrow(() -> new IllegalArgumentException(INVALID_COIN_AMOUNT));
     }
 
+    public Integer amountMultiplyBy(int times) {
+        return this.amount * times;
+    }
+
     public int getAmount() {
         return amount;
     }

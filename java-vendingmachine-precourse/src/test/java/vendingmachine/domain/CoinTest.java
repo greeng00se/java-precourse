@@ -58,6 +58,13 @@ class CoinTest {
     }
 
     @Test
+    void amountMultiplyBy_메서드는_입력값에_Coin의_amount을_곱한값을_반환한다() {
+        Coin coin = Coin.from(500);
+
+        assertThat(coin.amountMultiplyBy(5)).isEqualTo(2500);
+    }
+
+    @Test
     void getAmount_메서드는_Coin의_amount값을_반환한다() {
         assertThat(COIN_500.getAmount()).isEqualTo(500);
     }
