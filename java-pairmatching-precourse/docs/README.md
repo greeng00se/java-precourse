@@ -93,3 +93,7 @@ ex) 백엔드, 레벨1, 자동차경주
 ### View
 
 - [x] InputValidator: 입력 검증
+
+### dto
+
+- [x] CommandDto: 커맨드 전달
