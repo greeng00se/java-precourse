@@ -114,6 +114,7 @@ ex) 백엔드, 레벨1, 자동차경주
 - [x] PairMatchingRepository: 페어매칭 정보 저장소 클래스 추가
 - [x] MissionRepository: 미션 정보 저장소 클래스 추가
 
-### Util
+### Util & etc
 
 - [x] CrewReader: 크루들의 이름을 파일로부터 입력받아오는 클래스
+- [x] ControllerCommand: 커맨드 Enum
