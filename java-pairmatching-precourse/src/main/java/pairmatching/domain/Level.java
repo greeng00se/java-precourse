@@ -12,6 +12,8 @@ public enum Level {
     LEVEL4("레벨4"),
     LEVEL5("레벨5");
 
+    private static final String INVALID_LEVEL_NAME_MESSAGE = "올바른 레벨명이 아닙니다.";
+
     private String name;
 
     Level(String name) {
@@ -23,5 +25,12 @@ public enum Level {
         return Arrays.stream(values())
                 .map(level -> level.name)
                 .collect(toList());
+    }
+
+    public static Level from(String name) {
+        return Arrays.stream(values())
+                .filter(level -> level.name.equals(name))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException(INVALID_LEVEL_NAME_MESSAGE));
     }
 }
