@@ -5,7 +5,6 @@ import static pairmatching.domain.Level.LEVEL1;
 import static pairmatching.domain.Level.LEVEL2;
 import static pairmatching.domain.Level.LEVEL4;
 
-import java.io.IOException;
 import java.util.List;
 import pairmatching.controller.PairMatchingController;
 import pairmatching.domain.Course;
@@ -18,16 +17,16 @@ import pairmatching.repository.PairMatchingRepository;
 import pairmatching.service.PairMatchingService;
 
 public class Application {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         // TODO 구현 진행
         new PairMatchingController(pairMatchingService());
     }
 
-    private static PairMatchingService pairMatchingService() throws IOException {
+    private static PairMatchingService pairMatchingService() {
         return new PairMatchingService(crewRepository(), missionRepository(), pairMatchingRepository());
     }
 
-    private static CrewRepository crewRepository() throws IOException {
+    private static CrewRepository crewRepository() {
         CrewRepository crewRepository = new CrewRepository();
         crewRepository.saveAll(toCrewList(CrewReader.readBackend(), Course.BACKEND));
         crewRepository.saveAll(toCrewList(CrewReader.readFrontend(), Course.FRONTEND));
