@@ -108,6 +108,12 @@ ex) 백엔드, 레벨1, 자동차경주
 - [x] Pair: 페어를 표현하는 클래스
 - [x] Pairs: 페어의 일급 컬렉션
 
+### repository
+
+- [x] CrewRepository: 크루 저장소 클래스
+- [x] PairMatchingRepository: 페어매칭 정보 저장소 클래스 추가
+- [x] MissionRepository: 미션 정보 저장소 클래스 추가
+
 ### Util
 
 - [x] CrewReader: 크루들의 이름을 파일로부터 입력받아오는 클래스
