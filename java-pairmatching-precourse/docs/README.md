@@ -118,3 +118,4 @@ ex) 백엔드, 레벨1, 자동차경주
 
 - [x] CrewReader: 크루들의 이름을 파일로부터 입력받아오는 클래스
 - [x] ControllerCommand: 커맨드 Enum
+- [x] PairMatchingService: 비즈니스 로직을 담당하는 서비스 추가
