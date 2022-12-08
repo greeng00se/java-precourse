@@ -103,3 +103,7 @@ ex) 백엔드, 레벨1, 자동차경주
 
 - [x] Course: 과정 Enum
 - [x] Level: 레벨 Enum
+
+### Util
+
+- [x] CrewReader: 크루들의 이름을 파일로부터 입력받아오는 클래스
