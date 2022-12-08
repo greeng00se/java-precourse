@@ -8,7 +8,15 @@ public class AmountDto {
         this.amount = amount;
     }
 
+    public AmountDto(Integer amount) {
+        this.amount = amount.toString();
+    }
+
     public Integer getAmount() {
         return Integer.valueOf(amount);
+    }
+
+    public String getStringAmount() {
+        return amount;
     }
 }
