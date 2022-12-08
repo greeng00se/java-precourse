@@ -23,6 +23,14 @@ public class Product {
         }
     }
 
+    public boolean isNotPurchasable(Integer amount) {
+        return price > amount;
+    }
+
+    public boolean isSameName(String name) {
+        return this.name.equals(name);
+    }
+
     public Integer getPrice() {
         return price;
     }
