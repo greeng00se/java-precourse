@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public enum ControllerCommand {
     MATCHING("1"),
-    SEARCH("Q"),
+    SEARCH("2"),
     RESET("3"),
     QUIT("Q");
 
@@ -23,7 +23,7 @@ public enum ControllerCommand {
                 .orElseThrow(() -> new IllegalArgumentException(INVALID_COMMAND_MESSAGE));
     }
 
-    public boolean isQuit() {
-        return this == QUIT;
+    public boolean isNotQuit() {
+        return this != QUIT;
     }
 }

@@ -19,7 +19,7 @@ class ControllerCommandTest {
     }
 
     @Test
-    void isQuit_메서드는_인스턴스가_QUIT인_경우_true를_반환한다() {
-        assertThat(ControllerCommand.QUIT.isQuit()).isTrue();
+    void isNotQuit_메서드는_인스턴스가_QUIT인_경우_false를_반환한다() {
+        assertThat(ControllerCommand.QUIT.isNotQuit()).isFalse();
     }
 }

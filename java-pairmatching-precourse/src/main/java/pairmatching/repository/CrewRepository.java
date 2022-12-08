@@ -15,9 +15,10 @@ public class CrewRepository {
         this.crews.addAll(crews);
     }
 
-    public List<Crew> findByCourse(Course course) {
+    public List<String> findByCourse(Course course) {
         return crews.stream()
                 .filter(crew -> crew.isSameCourse(course))
+                .map(Crew::getName)
                 .collect(toList());
     }
 }

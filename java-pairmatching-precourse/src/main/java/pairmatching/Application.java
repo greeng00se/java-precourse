@@ -19,7 +19,8 @@ import pairmatching.service.PairMatchingService;
 public class Application {
     public static void main(String[] args) {
         // TODO 구현 진행
-        new PairMatchingController(pairMatchingService());
+        PairMatchingController pairMatchingController = new PairMatchingController(pairMatchingService());
+        pairMatchingController.run();
     }
 
     private static PairMatchingService pairMatchingService() {
@@ -45,7 +46,7 @@ public class Application {
                 new Mission(LEVEL1, "자동차경주"),
                 new Mission(LEVEL1, "로또"),
                 new Mission(LEVEL1, "숫자야구게임"),
-                new Mission(LEVEL2, "장바구나"),
+                new Mission(LEVEL2, "장바구니"),
                 new Mission(LEVEL2, "결제"),
                 new Mission(LEVEL2, "지하철노선도"),
                 new Mission(LEVEL4, "성능개선"),

@@ -14,7 +14,8 @@ public class InputValidator {
     private static final String INFORMATION_DELIMITER = ", ";
     private static final int COURSE_INDEX = 0;
     private static final int LEVEL_INDEX = 1;
-    private static final int MISSION_INDEX = 2;
+    private static final List<String> VALID_REMATCH_COMMAND = List.of("네", "아니오");
+    private static final String INVALID_REMATCH_COMMAND_MESSAGE = "네 또는 아니오를 입력해주세요.";
 
     public void validateCommand(String command) {
         if (!VALID_COMMAND.contains(command)) {
@@ -29,7 +30,6 @@ public class InputValidator {
         String[] info = information.split(INFORMATION_DELIMITER);
         validateCourse(info[COURSE_INDEX]);
         validateLevel(info[LEVEL_INDEX]);
-        validateMission(info[MISSION_INDEX]);
     }
 
     private void validateCourse(String course) {
@@ -44,6 +44,9 @@ public class InputValidator {
         }
     }
 
-    private void validateMission(String mission) {
+    public void validateRematchCommand(String rematchCommand) {
+        if (!VALID_REMATCH_COMMAND.contains(rematchCommand)) {
+            throw new IllegalArgumentException(INVALID_REMATCH_COMMAND_MESSAGE);
+        }
     }
 }
