@@ -17,6 +17,15 @@ import org.junit.jupiter.api.Test;
 class ChangeTest {
 
     @Test
+    void fillChange_메서드는_동전수량_정보가_담긴_Map을_입력받아_동전을_추가한다() {
+        Change change = new Change();
+
+        change.fillChange(Map.of(COIN_500, 5));
+
+        assertThat(change.calculateSum()).isEqualTo(2500);
+    }
+
+    @Test
     void calculateSum_메서드는_현재_남아있는_동전의_총합을_반환한다() {
         Change change = new Change(Map.of(COIN_500, 3));
 

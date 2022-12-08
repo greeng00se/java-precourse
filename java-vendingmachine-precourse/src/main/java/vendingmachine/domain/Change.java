@@ -9,8 +9,17 @@ public class Change {
 
     private final EnumMap<Coin, Integer> change = new EnumMap<>(Coin.class);
 
+    public Change() {
+    }
+
     public Change(Map<Coin, Integer> change) {
         this.change.putAll(change);
+    }
+
+    public void fillChange(Map<Coin, Integer> change) {
+        for (Coin coin : change.keySet()) {
+            this.change.merge(coin, change.get(coin), Integer::sum);
+        }
     }
 
     public Integer calculateSum() {
