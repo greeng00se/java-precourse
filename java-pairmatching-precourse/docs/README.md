@@ -98,3 +98,8 @@ ex) 백엔드, 레벨1, 자동차경주
 
 - [x] CommandDto: 커맨드 전달
 - [x] InformationDto: 과정, 레벨, 미션명을 전달
+
+### domain
+
+- [x] Course: 과정 Enum
+- [x] Level: 레벨 Enum
