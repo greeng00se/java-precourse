@@ -49,6 +49,7 @@ class InputValidatorTest {
     @ParameterizedTest
     @ValueSource(strings = {
             "[product,1000,10]",
+            "[콜라,1500,20];[사이다,1000,10]",
             "[상품,1000,10];[상품,2000,5]",
             "[상품,10,5];[상품,2000,0]",
             "[p1,9900,10];[p3,2000,100]",
