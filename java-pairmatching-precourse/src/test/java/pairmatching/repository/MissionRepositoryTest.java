@@ -17,9 +17,11 @@ import pairmatching.domain.Mission;
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 class MissionRepositoryTest {
 
+    private MissionRepository missionRepository = new MissionRepository();
+
     @BeforeEach
     void setup() {
-        MissionRepository.clear();
+        missionRepository.clear();
     }
 
     @Test
@@ -27,14 +29,14 @@ class MissionRepositoryTest {
         Mission mission1 = new Mission(LEVEL1, "야구게임");
         Mission mission2 = new Mission(LEVEL5, "콜라 키우기");
 
-        MissionRepository.saveAll(List.of(mission1, mission2));
+        missionRepository.saveAll(List.of(mission1, mission2));
 
-        assertThat(MissionRepository.findAll()).hasSize(2);
+        assertThat(missionRepository.findAll()).hasSize(2);
     }
 
     @Test
     void findByLevelAndName_메서드는_입력받은_레벨과_미션명에_해당되는_미션이_없다면_예외를_던진다() {
-        assertThatThrownBy(() -> MissionRepository.findByLevelAndName(LEVEL1, "거위"))
+        assertThatThrownBy(() -> missionRepository.findByLevelAndName(LEVEL1, "거위"))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("미션이 존재하지 않습니다.");
     }
@@ -42,9 +44,9 @@ class MissionRepositoryTest {
     @Test
     void findByLevelAndName_메서드는_입력받은_레벨과_미션명에_해당되는_미션을_반환한다() {
         Mission mission = new Mission(LEVEL1, "야구게임");
-        MissionRepository.saveAll(List.of(mission));
+        missionRepository.saveAll(List.of(mission));
 
-        Mission findMission = MissionRepository.findByLevelAndName(LEVEL1, "야구게임");
+        Mission findMission = missionRepository.findByLevelAndName(LEVEL1, "야구게임");
 
         assertThat(findMission).isEqualTo(mission);
     }
@@ -53,8 +55,8 @@ class MissionRepositoryTest {
     void findAll_메서드는_저장된_모든_미션을_반환한다() {
         Mission mission1 = new Mission(LEVEL1, "야구게임");
         Mission mission2 = new Mission(LEVEL5, "사이다 마시기");
-        MissionRepository.saveAll(List.of(mission1, mission2));
+        missionRepository.saveAll(List.of(mission1, mission2));
 
-        assertThat(MissionRepository.findAll()).containsExactly(mission1, mission2);
+        assertThat(missionRepository.findAll()).containsExactly(mission1, mission2);
     }
 }
