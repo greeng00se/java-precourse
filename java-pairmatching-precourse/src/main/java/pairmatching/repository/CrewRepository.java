@@ -9,16 +9,20 @@ import pairmatching.domain.Crew;
 
 public class CrewRepository {
 
-    private final List<Crew> crews = new ArrayList<>();
+    private static final List<Crew> repository = new ArrayList<>();
 
     public void saveAll(List<Crew> crews) {
-        this.crews.addAll(crews);
+        repository.addAll(crews);
     }
 
-    public List<String> findByCourse(Course course) {
-        return crews.stream()
+    public List<String> findAllNameByCourse(Course course) {
+        return repository.stream()
                 .filter(crew -> crew.isSameCourse(course))
                 .map(Crew::getName)
                 .collect(toList());
+    }
+
+    public void clear() {
+        repository.clear();
     }
 }
