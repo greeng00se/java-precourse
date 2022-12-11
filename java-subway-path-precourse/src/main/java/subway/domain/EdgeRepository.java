@@ -1,7 +1,9 @@
 package subway.domain;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class EdgeRepository {
@@ -22,5 +24,19 @@ public class EdgeRepository {
 
     public void deleteAll() {
         repository.clear();
+    }
+
+    public List<Stations> findAllStations() {
+        return new ArrayList<>(repository.keySet());
+    }
+
+    public Integer findTimeByStations(Stations stations) {
+        Edge edge = repository.get(stations);
+        return edge.getTime();
+    }
+
+    public Integer findDistanceByStations(Stations stations) {
+        Edge edge = repository.get(stations);
+        return edge.getDistance();
     }
 }

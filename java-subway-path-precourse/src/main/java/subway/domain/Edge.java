@@ -12,6 +12,14 @@ public class Edge {
         this.time = time;
     }
 
+    public Integer getDistance() {
+        return distance;
+    }
+
+    public Integer getTime() {
+        return time;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
