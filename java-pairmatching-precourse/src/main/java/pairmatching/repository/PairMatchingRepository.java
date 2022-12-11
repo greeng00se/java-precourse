@@ -1,54 +1,44 @@
 package pairmatching.repository;
 
+import static java.util.stream.Collectors.collectingAndThen;
 import static java.util.stream.Collectors.toList;
 
+import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import pairmatching.domain.Course;
-import pairmatching.domain.Crew;
 import pairmatching.domain.Level;
-import pairmatching.domain.Mission;
-import pairmatching.domain.Pair;
+import pairmatching.domain.PairMatchingInformation;
+import pairmatching.domain.Pairs;
 
 public class PairMatchingRepository {
 
-    private final Map<Pair, Mission> pairToMission = new HashMap<>();
+    private static final Map<PairMatchingInformation, Pairs> repository = new HashMap<>();
 
-    public boolean hasPairMatchingInformation(Course course, Mission mission) {
-        return pairToMission.keySet().stream()
-                .filter(pair -> pairToMission.get(pair).equals(mission))
-                .anyMatch(pair -> pair.isSameCourse(course));
+    public boolean existsByInformation(PairMatchingInformation information) {
+        return repository.containsKey(information);
     }
 
-    public void saveAll(List<Pair> pairs, Mission mission) {
-        for (Pair pair : pairs) {
-            pairToMission.put(pair, mission);
-        }
+    public void save(PairMatchingInformation pairMatchingInformation, Pairs pairs) {
+        repository.put(pairMatchingInformation, pairs);
     }
 
-    public boolean isPairInSameLevel(List<Crew> crews, Level level) {
-        return pairToMission.keySet().stream()
-                .filter(pair -> pairToMission.get(pair).isSameLevel(level))
-                .anyMatch(pair -> pair.isAlreadyPair(crews));
+    public Pairs findByInformation(PairMatchingInformation information) {
+        return repository.get(information);
+    }
+
+    public Pairs findAllPairsByLevel(Level level) {
+        return repository.keySet().stream()
+                .filter(information -> information.isSameLevel(level))
+                .map(information -> repository.get(information).getPairs())
+                .flatMap(Collection::stream)
+                .collect(collectingAndThen(toList(), Pairs::new));
+    }
+
+    public void remove(PairMatchingInformation information) {
+        repository.remove(information);
     }
 
     public void clear() {
-        pairToMission.clear();
-    }
-
-    public void remove(Course course, Mission mission) {
-        List<Pair> pairs = pairToMission.keySet().stream()
-                .filter(pair -> pairToMission.get(pair).equals(mission))
-                .filter(pair -> pair.isSameCourse(course))
-                .collect(toList());
-        pairs.forEach(pairToMission.keySet()::remove);
-    }
-
-    public List<Pair> findByCourseAndMission(Course course, Mission mission) {
-        return pairToMission.keySet().stream()
-                .filter(pair -> pairToMission.get(pair).equals(mission))
-                .filter(pair -> pair.isSameCourse(course))
-                .collect(toList());
+        repository.clear();
     }
 }

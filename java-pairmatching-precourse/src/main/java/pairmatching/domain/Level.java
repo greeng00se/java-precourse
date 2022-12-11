@@ -33,8 +33,4 @@ public enum Level {
                 .findFirst()
                 .orElseThrow(() -> new IllegalArgumentException(INVALID_LEVEL_NAME_MESSAGE));
     }
-
-    public boolean isSameLevel(Level level) {
-        return this == level;
-    }
 }

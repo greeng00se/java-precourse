@@ -13,7 +13,7 @@ public class Mission {
     }
 
     public boolean isSameLevel(Level level) {
-        return this.level.isSameLevel(level);
+        return this.level == level;
     }
 
     @Override
