@@ -37,3 +37,14 @@
 - [x] InputView: 입력을 담당하는 클래스
 - [x] OutputView: 출력을 담당하는 클래스
 - [x] InputValidator: 입력 검증을 담당하는 클래스
+
+### dto
+
+- [x] CommandDto: 커맨드를 전달하는 클래스
+- [x] PathDto: 출발역과 도착역을 전달하는 클래스
+- [x] ResultDto: 결과를 전달하는 클래스
+
+### etc
+
+- [x] ControllerCommand: 메인화면 커맨드에 대한 Enum
+- [x] LogicCommand: 경로화면 커맨드에 대한 Enum
