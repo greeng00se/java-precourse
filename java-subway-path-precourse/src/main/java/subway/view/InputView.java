@@ -40,7 +40,6 @@ public class InputView {
         String start = Console.readLine();
         System.out.println(READ_END_STATION);
         String end = Console.readLine();
-        inputValidator.validatePath(start, end);
         return new PathDto(start, end);
     }
 }
