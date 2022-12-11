@@ -20,18 +20,18 @@ class PairTest {
         Crew crew3 = new Crew(BACKEND, "포도");
         Pair pair = new Pair(List.of(crew1, crew2, crew3));
 
-        boolean result = pair.isAlreadyPair(List.of(crew2, crew3));
+        boolean result = pair.isAlreadyPairing(new Pair(List.of(crew2, crew3)));
 
         assertThat(result).isTrue();
     }
 
     @Test
-    void isAlreadyPair_메서드는_입력받은_크루들이_해당_페어에_2명이상_존재하지_않는_경우_false를_반환한다() {
+    void isAlreadyPairing_메서드는_입력받은_크루들이_해당_페어에_2명이상_존재하지_않는_경우_false를_반환한다() {
         Crew crew1 = new Crew(BACKEND, "사과");
         Crew crew2 = new Crew(BACKEND, "바나나");
         Pair pair = new Pair(List.of(crew1, crew2));
 
-        boolean result = pair.isAlreadyPair(List.of(crew2));
+        boolean result = pair.isAlreadyPairing(new Pair(List.of(crew2)));
 
         assertThat(result).isFalse();
     }

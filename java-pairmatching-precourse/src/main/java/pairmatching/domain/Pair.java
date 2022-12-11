@@ -6,22 +6,22 @@ import java.util.List;
 
 public class Pair {
 
-    private static final int INVALID_CREW_COUNT = 2;
+    private static final int MINIMUM_PARING_COUNT = 2;
 
-    private final List<Crew> pair;
+    private final List<Crew> crews;
 
     public Pair(List<Crew> pair) {
-        this.pair = pair;
+        this.crews = pair;
     }
 
-    public boolean isAlreadyPair(List<Crew> crews) {
-        return crews.stream()
-                .filter(pair::contains)
-                .count() >= INVALID_CREW_COUNT;
+    public boolean isAlreadyPairing(Pair other) {
+        return MINIMUM_PARING_COUNT <= other.crews.stream()
+                .filter(this.crews::contains)
+                .count();
     }
 
     public List<String> getCrewName() {
-        return pair.stream()
+        return crews.stream()
                 .map(Crew::getName)
                 .collect(toList());
     }
