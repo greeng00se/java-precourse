@@ -1,10 +1,18 @@
 package subway;
 
-import java.util.Scanner;
+import static subway.config.AppConfig.edgeRepository;
+import static subway.config.AppConfig.stationRepository;
+
+import subway.controller.SubwayController;
+import subway.service.PathFindService;
 
 public class Application {
     public static void main(String[] args) {
-        final Scanner scanner = new Scanner(System.in);
-        // TODO: 프로그램 구현
+        SubwayController subwayController = new SubwayController(pathFindService());
+        subwayController.run();
+    }
+
+    private static PathFindService pathFindService() {
+        return new PathFindService(edgeRepository(), stationRepository());
     }
 }
