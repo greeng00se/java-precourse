@@ -12,6 +12,14 @@ public class Stations {
         this.end = end;
     }
 
+    public Station getStart() {
+        return start;
+    }
+
+    public Station getEnd() {
+        return end;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
