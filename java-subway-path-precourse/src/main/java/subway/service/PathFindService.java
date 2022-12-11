@@ -1,5 +1,8 @@
 package subway.service;
 
+import static subway.controller.LogicCommand.DISTANCE;
+import static subway.controller.LogicCommand.TIME;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -28,15 +31,15 @@ public class PathFindService {
     public PathFindService(EdgeRepository edgeRepository, StationRepository stationRepository) {
         this.edgeRepository = edgeRepository;
         this.stationRepository = stationRepository;
-        service.put(LogicCommand.TIME, edgeRepository::findTimeByStations);
-        service.put(LogicCommand.DISTANCE, edgeRepository::findDistanceByStations);
+        service.put(TIME, edgeRepository::findTimeByStations);
+        service.put(DISTANCE, edgeRepository::findDistanceByStations);
     }
 
     public ResultDto find(PathDto pathDto, LogicCommand command) {
         DijkstraShortestPath dijkstraShortestPath = generateGraph(command);
         List<Station> result = findPath(pathDto, dijkstraShortestPath);
-        Integer time = calculate(result, edgeRepository::findTimeByStations);
-        Integer distance = calculate(result, edgeRepository::findDistanceByStations);
+        Integer time = calculate(result, service.get(TIME));
+        Integer distance = calculate(result, service.get(DISTANCE));
         return new ResultDto(distance, time, result.stream()
                 .map(Station::getName)
                 .collect(Collectors.toList())
