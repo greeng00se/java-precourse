@@ -40,6 +40,7 @@ public class AppConfig {
             Integer distance = Integer.valueOf(info[DISTANCE_INDEX]);
             Integer time = Integer.valueOf(info[TIME_INDEX]);
             edgeRepository.addEdge(new Stations(start, end), new Edge(distance, time));
+            edgeRepository.addEdge(new Stations(end, start), new Edge(distance, time));
         }
     }
 

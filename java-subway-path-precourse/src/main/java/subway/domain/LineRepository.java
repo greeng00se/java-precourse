@@ -9,7 +9,7 @@ import java.util.Objects;
 
 public class LineRepository {
     private static final List<Line> lines = new ArrayList<>();
-    private static final String INVALID_LINE_MESSAGE = "{0}호선은 존재하지 않습니다.";
+    private static final String INVALID_LINE_MESSAGE = "{0}은 존재하지 않습니다.";
 
     public List<Line> lines() {
         return Collections.unmodifiableList(lines);

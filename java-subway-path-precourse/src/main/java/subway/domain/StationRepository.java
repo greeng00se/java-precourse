@@ -9,7 +9,7 @@ import java.util.Objects;
 
 public class StationRepository {
 
-    private static final String INVALID_STATION_MESSAGE = "{0}역은 존재하지 않습니다.";
+    private static final String INVALID_STATION_MESSAGE = "{0}은 존재하지 않습니다.";
     private static final List<Station> stations = new ArrayList<>();
 
     public List<Station> stations() {
