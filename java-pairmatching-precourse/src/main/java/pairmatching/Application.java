@@ -14,17 +14,25 @@ import pairmatching.io.CrewReader;
 import pairmatching.repository.CrewRepository;
 import pairmatching.repository.MissionRepository;
 import pairmatching.repository.PairMatchingRepository;
-import pairmatching.service.PairMatchingService;
+import pairmatching.service.PairMatchingCommandService;
+import pairmatching.service.PairMatchingQueryService;
 
 public class Application {
     public static void main(String[] args) {
         // TODO 구현 진행
-        PairMatchingController pairMatchingController = new PairMatchingController(pairMatchingService());
+        PairMatchingController pairMatchingController = new PairMatchingController(
+                pairMatchingCommandService(),
+                pairMatchingQueryService()
+        );
         pairMatchingController.run();
     }
 
-    private static PairMatchingService pairMatchingService() {
-        return new PairMatchingService(crewRepository(), missionRepository(), pairMatchingRepository());
+    private static PairMatchingCommandService pairMatchingCommandService() {
+        return new PairMatchingCommandService(crewRepository(), missionRepository(), pairMatchingRepository());
+    }
+
+    private static PairMatchingQueryService pairMatchingQueryService() {
+        return new PairMatchingQueryService(missionRepository(), pairMatchingRepository());
     }
 
     private static CrewRepository crewRepository() {
