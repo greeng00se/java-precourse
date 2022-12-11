@@ -30,3 +30,10 @@
   - 최소 시간의 경우 시간의 가중치를 가진다.
 
 - Station과 Station에 대한 거리와, 소요시간 Map을 작성한다.
+
+
+### View
+
+- [x] InputView: 입력을 담당하는 클래스
+- [x] OutputView: 출력을 담당하는 클래스
+- [x] InputValidator: 입력 검증을 담당하는 클래스
