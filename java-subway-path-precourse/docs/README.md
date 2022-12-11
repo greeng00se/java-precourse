@@ -1,5 +1,5 @@
-
 - 초기 설정
+
 ```
  1. 지하철역으로 교대역, 강남역, 역삼역, 남부터미널역, 양재역, 양재시민의숲역, 매봉역이 등록되어 있다.
  2. 지하철 노선으로 2호선, 3호선, 신분당선이 등록되어 있다.
@@ -25,12 +25,11 @@
   - 총 소요 시간을 출력한다.
   - 경로를 출력한다.
 
-- 다익스트라 
+- 다익스트라
   - 최단 거리의 경우 모든 라인이 1의 가중치를 가진다.
   - 최소 시간의 경우 시간의 가중치를 가진다.
 
 - Station과 Station에 대한 거리와, 소요시간 Map을 작성한다.
-
 
 ### View
 
@@ -48,3 +47,16 @@
 
 - [x] ControllerCommand: 메인화면 커맨드에 대한 Enum
 - [x] LogicCommand: 경로화면 커맨드에 대한 Enum
+- [x] ShortestTimeService: 최소 시간 탐색 서비스
+- [x] ShortestDistanceService: 최소 경로 탐색 서비스
+- [x] SubwayController: 요청을 처리하는 컨트롤러 클래스
+
+### domain
+
+- [x] Edge: 역 사이의 거리와 이동 시간
+- [x] EdgeRepository: 역 사이의 거리와 이동시간에 대한 정보를 가지고 있는 저장소
+- [x] Line: 노선
+- [x] LineRepository: 노선에 대한 정보를 가지고 있는 저장소
+- [x] Station: 역
+- [x] StationRepository: 역에 대한 정보를 가지고 있는 저장소
+- [x] Stations: 출발역과 도착역에 대한 클래스
