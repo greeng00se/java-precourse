@@ -1,26 +1,29 @@
 package pairmatching.dto;
 
+import pairmatching.domain.Course;
+import pairmatching.domain.Level;
+
 public class InformationDto {
 
-    private final String course;
-    private final String level;
-    private final String mission;
+    private final Course course;
+    private final Level level;
+    private final String missionName;
 
-    public InformationDto(String course, String level, String mission) {
-        this.course = course;
-        this.level = level;
-        this.mission = mission;
+    public InformationDto(String course, String level, String missionName) {
+        this.course = Course.from(course);
+        this.level = Level.from(level);
+        this.missionName = missionName;
     }
 
-    public String getCourse() {
+    public Course getCourse() {
         return course;
     }
 
-    public String getLevel() {
+    public Level getLevel() {
         return level;
     }
 
-    public String getMission() {
-        return mission;
+    public String getMissionName() {
+        return missionName;
     }
 }
