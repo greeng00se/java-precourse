@@ -1,12 +1,9 @@
 package subway.controller;
 
-import java.util.HashMap;
-import java.util.Map;
 import subway.dto.CommandDto;
 import subway.dto.PathDto;
+import subway.dto.ResultDto;
 import subway.service.PathFindService;
-import subway.service.ShortestDistanceService;
-import subway.service.ShortestTimeService;
 import subway.view.InputView;
 import subway.view.OutputView;
 
@@ -15,10 +12,10 @@ public class SubwayController {
     private final InputView inputView = new InputView();
     private final OutputView outputView = new OutputView();
 
-    private final Map<LogicCommand, PathFindService> pathFindServiceMap;
+    private final PathFindService pathFindService;
 
-    public SubwayController(Map<LogicCommand, PathFindService> pathFindServiceMap) {
-        this.pathFindServiceMap = pathFindServiceMap;
+    public SubwayController(PathFindService pathFindService) {
+        this.pathFindService = pathFindService;
     }
 
     public void run() {
@@ -49,7 +46,7 @@ public class SubwayController {
 
     private void pathFind(LogicCommand command) {
         PathDto pathDto = Retry.execute(inputView::readPath);
-        PathFindService pathFindService = pathFindServiceMap.get(command);
-        pathFindService.find(pathDto);
+        ResultDto resultDto = pathFindService.find(pathDto, command);
+        outputView.printResult(resultDto);
     }
 }
