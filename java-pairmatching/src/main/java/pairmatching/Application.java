@@ -11,6 +11,8 @@ import pairmatching.controller.MatchingController;
 import pairmatching.controller.ResetController;
 import pairmatching.controller.SearchController;
 import pairmatching.controller.command.ControllerMapper;
+import pairmatching.service.PairMatchingCommandService;
+import pairmatching.service.PairMatchingQueryService;
 
 public class Application {
     public static void main(String[] args) {
@@ -20,12 +22,20 @@ public class Application {
     }
 
     private static ControllerMapper controllerMapper() {
-        ControllerMapper controllerMapper = new ControllerMapper();
-        controllerMapper.put(MATCHING, new MatchingController());
-        controllerMapper.put(SEARCH, new SearchController());
-        controllerMapper.put(RESET, new ResetController());
-        controllerMapper.put(QUIT, () -> {
+        ControllerMapper mapper = new ControllerMapper();
+        mapper.put(MATCHING, new MatchingController(pairMatchingQueryService(), pairMatchingCommandService()));
+        mapper.put(SEARCH, new SearchController());
+        mapper.put(RESET, new ResetController());
+        mapper.put(QUIT, () -> {
         });
-        return controllerMapper;
+        return mapper;
+    }
+
+    private static PairMatchingQueryService pairMatchingQueryService() {
+        return new PairMatchingQueryService();
+    }
+
+    private static PairMatchingCommandService pairMatchingCommandService() {
+        return new PairMatchingCommandService();
     }
 }
