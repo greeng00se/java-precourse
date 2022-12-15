@@ -1,8 +1,8 @@
-package pairmatching.util;
+package util;
 
 import java.util.function.Function;
 import java.util.function.Supplier;
-import pairmatching.view.OutputView;
+import view.OutputView;
 
 public class Retry {
 

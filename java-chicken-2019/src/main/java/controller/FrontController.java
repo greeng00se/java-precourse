@@ -1,9 +1,8 @@
-package pairmatching.controller;
+package controller;
 
-import static pairmatching.util.Retry.execute;
-
-import pairmatching.command.FrontCommand;
-import pairmatching.view.InputView;
+import command.FrontCommand;
+import util.Retry;
+import view.InputView;
 
 public class FrontController extends AbstractController {
 
@@ -16,11 +15,11 @@ public class FrontController extends AbstractController {
 
     @Override
     protected void process() {
-        FrontCommand command = execute(inputView::readFrontCommand);
+        FrontCommand command = Retry.execute(inputView::readFrontCommand);
         while (command.isContinuous()) {
             Controller controller = controllerMapper.get(command);
             controller.run();
-            command = execute(inputView::readFrontCommand);
+            command = Retry.execute(inputView::readFrontCommand);
         }
     }
 }
