@@ -1,7 +1,13 @@
 package pairmatching;
 
+import static pairmatching.config.AppConfig.controllerMapper;
+
+import pairmatching.controller.Controller;
+import pairmatching.controller.FrontController;
+
 public class Application {
     public static void main(String[] args) {
-        // TODO 구현 진행
+        Controller frontController = new FrontController(controllerMapper());
+        frontController.run();
     }
 }

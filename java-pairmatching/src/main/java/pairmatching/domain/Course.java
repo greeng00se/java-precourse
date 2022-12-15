@@ -13,8 +13,9 @@ public enum Course {
     Course(String name) {
         this.name = name;
     }
-    
+
     public static Course from(String name) {
+
         return Arrays.stream(values())
                 .filter(course -> course.name.equals(name))
                 .findFirst()
