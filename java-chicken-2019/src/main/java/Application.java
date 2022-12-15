@@ -1,21 +1,22 @@
-import domain.Menu;
-import domain.MenuRepository;
-import domain.Table;
-import domain.TableRepository;
-import view.InputView;
-import view.OutputView;
-
-import java.util.List;
+import command.FrontCommand;
+import controller.ControllerMapper;
+import controller.FrontController;
+import controller.OrderController;
+import controller.PaymentController;
 
 public class Application {
     // TODO 구현 진행
     public static void main(String[] args) {
-        final List<Table> tables = TableRepository.tables();
-        OutputView.printTables(tables);
+        FrontController frontController = new FrontController(controllerMapper());
+        frontController.run();
+    }
 
-        final int tableNumber = InputView.inputTableNumber();
-
-        final List<Menu> menus = MenuRepository.menus();
-        OutputView.printMenus(menus);
+    private static ControllerMapper controllerMapper() {
+        ControllerMapper controllerMapper = new ControllerMapper();
+        controllerMapper.put(FrontCommand.ORDER, new OrderController());
+        controllerMapper.put(FrontCommand.PAYMENT, new PaymentController());
+        controllerMapper.put(FrontCommand.QUIT, () -> {
+        });
+        return controllerMapper;
     }
 }
