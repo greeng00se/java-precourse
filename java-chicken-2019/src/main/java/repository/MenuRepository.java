@@ -20,7 +20,7 @@ public class MenuRepository {
         menus.add(new Menu(22, "사이다", Category.BEVERAGE, 1_000));
     }
 
-    public static List<Menu> menus() {
+    public List<Menu> findAll() {
         return Collections.unmodifiableList(menus);
     }
 }

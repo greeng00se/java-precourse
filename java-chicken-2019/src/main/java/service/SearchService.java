@@ -1,5 +1,6 @@
 package service;
 
+import domain.Menu;
 import domain.Table;
 import dto.TableDto;
 import java.util.List;
@@ -28,5 +29,9 @@ public class SearchService {
                 .map(Table::getNumber)
                 .collect(Collectors.toList());
         return new TableDto(tableNumbers, orderExists);
+    }
+
+    public List<Menu> searchMenus() {
+        return menuRepository.findAll();
     }
 }
