@@ -7,7 +7,7 @@ import pairmatching.view.InputView;
 
 public class FrontController extends AbstractController {
 
-    private final InputView inputView = InputView.getInstance();
+    private final InputView inputView = InputView.INSTANCE;
     private final ControllerMapper controllerMapper;
 
     public FrontController(ControllerMapper controllerMapper) {

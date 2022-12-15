@@ -8,7 +8,7 @@ public class Retry {
 
     private static final int RETRY_COUNT = 3;
     private static final String RETRY_FAIL_MESSAGE = "기능을 수행할 수 없습니다.";
-    private static final OutputView outputView = OutputView.getInstance();
+    private static final OutputView outputView = OutputView.INSTANCE;
 
     public static <T> T execute(Supplier<T> supplier) {
         try {
