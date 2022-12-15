@@ -11,7 +11,7 @@ import pairmatching.domain.PairMatchingInformation;
 import pairmatching.domain.Pairs;
 
 public class PairMatchingRepository {
-
+    
     private static final Map<PairMatchingInformation, Pairs> repository = new HashMap<>();
 
     public boolean existsByInformation(PairMatchingInformation information) {

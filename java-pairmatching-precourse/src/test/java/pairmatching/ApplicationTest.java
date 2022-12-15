@@ -6,19 +6,17 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import camp.nextstep.edu.missionutils.test.NsTest;
 import java.util.Arrays;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import pairmatching.repository.PairMatchingRepository;
 
 class ApplicationTest extends NsTest {
 
     private static final String ERROR_MESSAGE = "[ERROR]";
 
-    @BeforeEach
-    void setup() {
-        PairMatchingRepository pairMatchingRepository = new PairMatchingRepository();
-        pairMatchingRepository.clear();
-    }
+//    @BeforeEach
+//    void setup() {
+//        PairMatchingRepository pairMatchingRepository = new PairMatchingRepository();
+//        pairMatchingRepository.clear();
+//    }
 
     @Test
     void 짝수_인원_페어_매칭() {

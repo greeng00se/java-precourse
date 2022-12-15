@@ -5,7 +5,9 @@ import pairmatching.controller.ControllerMapper;
 import pairmatching.controller.MatchingController;
 import pairmatching.controller.ResetController;
 import pairmatching.controller.SearchController;
+import pairmatching.repository.CrewRepository;
 import pairmatching.service.MatchingService;
+import pairmatching.util.CrewFileReader;
 
 public class AppConfig {
 
@@ -24,7 +26,14 @@ public class AppConfig {
     }
 
     private static MatchingService matchingService() {
-        return new MatchingService();
+        return new MatchingService(crewRepository());
+    }
+
+    private static CrewRepository crewRepository() {
+        CrewRepository crewRepository = new CrewRepository();
+        crewRepository.saveAll(CrewFileReader.readFrontend());
+        crewRepository.saveAll(CrewFileReader.readBackend());
+        return crewRepository;
     }
 
     private static SearchController searchController() {
