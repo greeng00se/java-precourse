@@ -2,13 +2,19 @@ package view;
 
 import domain.Menu;
 import domain.Table;
-
 import java.util.List;
 
-public class OutputView {
+public enum OutputView {
+    INSTANCE;
+    
     private static final String TOP_LINE = "┌ ─ ┐";
     private static final String TABLE_FORMAT = "| %s |";
     private static final String BOTTOM_LINE = "└ ─ ┘";
+    private static final String EXCEPTION_MESSAGE = "[ERROR] ";
+
+    public void printExceptionMessage(String message) {
+        System.out.println(EXCEPTION_MESSAGE + message);
+    }
 
     public static void printTables(final List<Table> tables) {
         System.out.println("## 테이블 목록");
