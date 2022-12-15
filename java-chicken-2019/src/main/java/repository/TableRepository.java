@@ -1,5 +1,6 @@
-package domain;
+package repository;
 
+import domain.Table;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -16,7 +17,7 @@ public class TableRepository {
         tables.add(new Table(8));
     }
 
-    public static List<Table> tables() {
+    public List<Table> findAll() {
         return Collections.unmodifiableList(tables);
     }
 }
